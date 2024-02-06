@@ -7,7 +7,7 @@ import {
   TextInput,
   View
 } from 'react-native'
-import React, { Component } from 'react'
+import React, { Component, useEffect, useState } from 'react'
 import {
   BellIcon,
   MagnifyingGlassIcon,
@@ -21,10 +21,42 @@ import {
 import { SearchIcon } from 'lucide-react'
 import { SearchBar } from 'react-native-screens'
 import Categories from '../components/Categories'
+import axios from 'axios'
+import Recepies from '../components/Recepies'
 
 const HomeScreen = () => {
+  const [categories, setCategories] = useState([])
+  const [meals, setMeals] = useState([])
+  const [activecategory, setActiveCategory] = useState('Beef')
+  const [querry,setquerry]=useState('')
+  const getCategopries = async () => {
+    const res = await axios.get(
+      'https://www.themealdb.com/api/json/v1/1/categories.php'
+    )
+    const data = await res?.data?.categories
+    setCategories(data)
+  }
+  const getMeals = async (category = 'Beef') => {
+    const res = await axios.get(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
+    )
+    const dd = res?.data?.meals
+    setMeals(dd)
+  }
+  useEffect(() => {
+    getCategopries()
+    getMeals()
+  }, [])
+
+  const handleCategory = category => {
+    getMeals(category)
+    setActiveCategory(category)
+    setMeals([])
+  }
+console.log(querry)
   return (
     <View className='flex-1 bg-white'>
+      <StatusBar barStyle={'dark-content'} />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 50 }}
@@ -49,7 +81,7 @@ const HomeScreen = () => {
             style={{ fontSize: hp(2) }}
             className='font-semibold text-neutral-600'
           >
-            Hello , Aman !
+            Hello !
           </Text>
           <View>
             <Text
@@ -69,12 +101,14 @@ const HomeScreen = () => {
 
         {/* Search View */}
 
-        <View className='rounded-2xl bg-black/5 mx-2 flex flex-row items-center p-[4px]'>
+        <View className='rounded-2xl bg-black/5 mx-2 flex flex-row items-center'>
           <TextInput
             placeholder='Search any recepie'
             placeholderTextColor={'gray'}
+            value={querry}
+           onChangeText={setquerry}
             style={{ fontSize: hp(1.8) }}
-            className='flex-1 text-base mb-1  pl-3 py-2 tracking-wider'
+            className='flex-1 text-base mb-1  pl-3   h-16 tracking-wider'
           />
           <View className='bg-white/80 p-2 rounded-2xl  '>
             <MagnifyingGlassIcon color='orange' size={hp(3.8)} />
@@ -83,9 +117,17 @@ const HomeScreen = () => {
 
         {/* Category Flat  List  */}
         <View>
-
-        <Categories />
+          {categories.length > 0 && (
+            <Categories
+              activecategory={activecategory}
+              handleCategory={handleCategory}
+              categories={categories}
+              setCategories={setCategories}
+            />
+          )}
         </View>
+        {/* Recepies */}
+        <Recepies categories={categories} meals={meals} querry={querry} />
       </ScrollView>
     </View>
   )

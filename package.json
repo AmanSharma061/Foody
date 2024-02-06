@@ -9,14 +9,18 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-seoul/masonry-list": "^1.4.2",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
+    "axios": "^1.6.7",
+    "eas": "^0.1.0",
     "expo": "~50.0.5",
     "expo-status-bar": "~1.11.1",
     "lucide-react": "^0.322.0",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "0.73.2",
+    "react-native-gesture-handler": "^2.15.0",
     "react-native-heroicons": "^4.0.0",
     "react-native-reanimated": "~3.6.2",
     "react-native-responsive-screen": "^1.4.2",
@@ -25,6 +29,10 @@
     "react-native-svg": "^14.1.0",
     "react-native-tailwindcss": "^1.1.11",
     "react-native-web": "~0.19.6",
+    "react-native-webview": "^13.7.0",
+    "react-native-youtube": "^2.0.2",
+    "react-native-youtube-iframe": "^2.3.0",
+    "reanimated-masonry-list": "^1.0.1",
     "tailwindcss-react-native": "^1.7.10"
   },
   "devDependencies": {

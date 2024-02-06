@@ -1,34 +1,36 @@
 export const categories = [
   {
-    name: "Appetizers",
-    image: "url_to_appetizers_image.jpg"
-  },
-  {
-    name: "Main Courses",
-    image: "url_to_main_courses_image.jpg"
-  },
-  {
-    name: "Desserts",
-    image: "url_to_desserts_image.jpg"
-  },
-  {
-    name: "Salads",
-    image: "url_to_salads_image.jpg"
-  },
-  {
-    name: "Drinks",
-    image: "url_to_drinks_image.jpg"
-  },
-  {
-    name: "Vegetarian",
-    image: "url_to_vegetarian_image.jpg"
-  },
-  {
-    name: "Gluten-Free",
-    image: "url_to_gluten_free_image.jpg"
-  },
-  {
-    name: "Vegan",
-    image: "url_to_vegan_image.jpg"
-  }
+    name: 'Starter',
+    image: 'https://www.themealdb.com/images/category/starter.png'
+},
+{
+    name: 'Beef',
+    image: 'https://themealdb.com/images/category/beef.png'
+},
+{
+    name: 'Dessert',
+    image: 'https://themealdb.com/images/category/dessert.png'
+}
 ];
+export const mealData = [
+    {
+        name: 'Shakshuka',
+        image: 'https://www.themealdb.com/images/media/meals/g373701551450225.jpg'
+    },
+    {
+        name: 'Beef Banh Mi Bowls with Sriracha Mayo',
+        image: 'https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg'
+    },
+    {
+        name: 'Chickpea Fajitas',
+        image: 'https://www.themealdb.com/images/media/meals/tvtxpq1511464705.jpg'
+    },
+    {
+        name: 'Smoky Lentil Chili with Squash',
+        image: 'https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg'
+    },
+    {
+        name: 'Braised Beef Chilli',
+        image: 'https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg'
+    }
+]
