@@ -33,4 +33,5 @@ To run Foody on your local machine, follow these steps:
 4. Start the Expo server.
    bash```
    npm start
+   ```
    
