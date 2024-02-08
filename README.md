@@ -27,11 +27,17 @@ To run Foody on your local machine, follow these steps:
 1. Clone this repository.
 
 2. Navigate to the project directory.
+```bash
+cd foody
+```
 
-3. Install dependencies using npm install .
+4. Install dependencies using npm install .
 
-4. Start the Expo server.
-   bash```
+5. Start the Expo server.
+   ```bash
    npm start
    ```
+6. For viewing in you phone Just download the Expo go app from Play Store / App store
+7. Scan the Qr shown in the terminal and the app will be live on your phone.   
+   
    
